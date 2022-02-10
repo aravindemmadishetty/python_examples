@@ -82,12 +82,12 @@ def findStatus(children):
     else:
         return findStatus(children[1:])
 
-ipt1 = input().split(' ')
+ipt1 = input().strip().split(' ')
 [C, N, K] = map(int, ipt1)
 
 SE = []
 for i in range(N):
-    SE.append( list(map(int, input().split(' '))))
+    SE.append( list(map(int, input().strip().split(' '))))
 
 SEsets = []
 for i in SE:
