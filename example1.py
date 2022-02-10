@@ -39,7 +39,7 @@ def findAlternateSet(cakes, otherCakes):
         ilist = sorted(list(i))
         cakeslist = sorted(list(cakes))
         otherCakeslist = sorted(list(otherCakes))
-        if(len(ilist) >= len(cakes) - len(otherCakes) and len(otherCakes) != 0):
+        if(len(ilist) >= len(cakes) - len(otherCakes) and len(otherCakes) != 0 ):
             if(cakeslist[0] == otherCakeslist[0] and ilist[-1] == otherCakeslist[0]-1):
                 return set(ilist[len(cakes)-len(otherCakes)+1:] + otherCakeslist)
             elif(cakeslist[-1] == otherCakeslist[-1] and ilist[0] == otherCakeslist[-1]+1):
@@ -56,6 +56,9 @@ def findAbandonedSets(sets):
     completeset = set(range(1, C+1))
     union = set().union(*SEsets)
     remainingitems = completeset - union
+    if(len(remainingitems) == 0):
+        return []
+    
     rilist = list(remainingitems)
     asetlist = [ rilist[0] ]
     abandonedSets = []
